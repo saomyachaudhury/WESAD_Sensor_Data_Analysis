@@ -1,0 +1,62 @@
+PANAS
+
+
+POSITIVE
+Active
+Interested or Interest
+Inspired
+Strong
+Excited or Excitement
+Proud
+Enthused, Enthusiastic or Enthusiasm
+Alert
+Determined
+Attentive
+Happy or Hapiness
+
+
+NEGATIVE
+Distress or Distressed
+Annoyed or Annoyance
+Guilty or Guilt
+Scared
+Hostility
+Irritated, Irritation orr Irritable
+Ashamed
+Nervous or Nervousness
+Jittery
+Afraid
+Stress or Stressed or Stressed Out
+Frustrated or Frustration
+Angry or Anger
+Irritated, Irritation or Irritable
+Sad or Sadness
+
+
+
+0> Active: engaging or ready to engage in physically energetic pursuits.
+1> Distress or Distressed: Great anxiety, strain, difficulties, sorrow, or pain.
+2> Interested or Interest: The feeling of wanting to know or learn about something or someone; engaged attention.
+3> Inspired: The feeling that you want to do something and can do it. The feeling of being aroused, animated or imbued with the spirit to do something, by or as if by supernatural or divine influence. The feeling that you want to do something and can do it.
+4> Annoyed or Annoyance: Slightly angry; bothered; irritated.
+5> Strong: Feeling steady, not easily upset; resilient.
+6> Guilty or Guilt: Remorse caused by feeling responsible for some offense.
+7> Scared: Feeling fear, fright or panic.
+8> Hostility: Feeling opposition or dislike; unfriendliness.
+9> Excited or Excitement: A feeling of great enthusiasm and eagerness; a heighted state of energy.
+10> Proud: Feeling great self-respect or dignity; feeling deep pleasure or satisfaction as a result of one’s own achievements, qualities, or possessions or those of someone with whom one is closely associated.
+11> Irritated, Irritation orr Irritable: The state of feeling annoyed, impatient, or slightly angry.
+12> Enthused, Enthusiastic or Enthusiasm: Intense and eager excitement, enjoyment, interest, or approval.
+13> Ashamed: A feeling of shame; distressed or embarrassed by feelings of guilt, foolishness, or disgrace.
+14> Alert: A feeling of being fully aware and attentive.
+15> Nervous or Nervousness: The anxious feeling you have when you have the jitters; agitated or alarmed.
+16> Determined: The feeling that you are going to do something and that you will not allow anyone or anything to stop you; feeling resolve.
+17> Attentive: To pay attention to details.
+18> Jittery: A feeling of nervous excitability; feeling shaky, high-strung; spasmodic/ nervous or unable to relax.
+19> Afraid: Feeling fear, reluctance, apprehension.
+20> Stress or Stressed or Stressed Out: A state of mental or emotional strain or tension resulting from adverse or demanding circumstances.
+21> Frustrated or Frustration: The feeling of being upset, discouraged, angry or annoyed as a result of being unable to change or achieve unfulfilled goals, desires or needs.
+22> Happy or Hapiness: State of well-being characterized by emotions ranging from contentment to intense joy.
+23> Angry or Anger: A strong feeling of displeasure aroused by some real or supposed grievance.
+24> Irritated, Irritation or Irritable: The state of feeling annoyed, impatient, or slightly angry.
+25> Sad or Sadness: An emotional pain associated with, or characterized by, feelings of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow.
