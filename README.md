@@ -13,11 +13,25 @@ Our approach differs due to the fact that we did not just focus on binary classe
 We feel humans are highly expressive and have wide range of emotional states. Hence, it is 
 very improtant to consider as many emotional states as possible.
 
+## Dataset
+
+We use the WEarable Sensor and Affection Detection Dataset for the analysis on sensor generated values. The WESAD dataset contains accelerometer, heartrate, respiration, ECG, EDA, EMG readings of 15 participants (12 males and 3 female). Each of them has been recorded for 8 different states (0 = not defined / transient, 1 = baseline, 2 = stress, 3 = amusement, 4 = meditation, 5/6/7 = should be ignored in this dataset). Data was collected using the RespiBAN and Empatica E4 band. 
+We believe, it is possible to segregate the emotional states of both the Victim (who is wearing the device) and device a complete solution as far as the sensor-based data analysis is concerned, for the protection of women under threat.
+
+* Initially the dataset contained sensor readings for 17 subjects but due to sensor malfunction 2 were discarded.
+* 2 sensors data readings (chest-word RespiBAN and wrist-worn Empatica E4).
+* All samples for RespiBAN were sampled at 700 Hz.
+* For Empatica E4 device; BVP, EDA, Body Temperature, 3 axis accelerometers were sampled at 64Hz, 4Hz, 4Hz and 32Hz respectively.
+* 2 gender (Male and Female) and 4 emotion states classified (Baseline, Meditation, Stress, Amusement).
+
+[Dataset Credits](https://ubicomp.eti.uni-siegen.de/home/datasets/icmi18/index.html?lang=en)
+
 ## Installation
 Requirements:
 * Python >= 3.8
 * Jupyter Notebook
 
+Create a 'Dataset' folder in the main repository and extract the data. 
 We recommend using conda for python environment management and create a virtual environment.
 Create your python environment and install dependencies:
 
@@ -33,20 +47,6 @@ You may download the requirements using the requirements.txt file by following t
 
 
     pip install -r requirements.txt
-
-## Dataset
-
-We use the WEarable Sensor and Affection Detection Dataset for the analysis on sensor generated values. The WESAD dataset contains accelerometer, heartrate, respiration, ECG, EDA, EMG readings of 15 participants (12 males and 3 female). Each of them has been recorded for 8 different states (0 = not defined / transient, 1 = baseline, 2 = stress, 3 = amusement, 4 = meditation, 5/6/7 = should be ignored in this dataset). Data was collected using the RespiBAN and Empatica E4 band. 
-We believe, it is possible to segregate the emotional states of both the Victim (who is wearing the device) and device a complete solution as far as the sensor-based data analysis is concerned, for the protection of women under threat.
-
-* Initially the dataset contained sensor readings for 17 subjects but due to sensor malfunction 2 were discarded.
-* 2 sensors data readings (chest-word RespiBAN and wrist-worn Empatica E4).
-* All samples for RespiBAN were sampled at 700 Hz.
-* For Empatica E4 device; BVP, EDA, Body Temperature, 3 axis accelerometers were sampled at 64Hz, 4Hz, 4Hz and 32Hz respectively.
-* 2 gender (Male and Female) and 4 emotion states classified (Baseline, Meditation, Stress, Amusement).
-
-[Dataset Credits](https://ubicomp.eti.uni-siegen.de/home/datasets/icmi18/index.html?lang=en)
-
 
 
 ## Block Diagram
