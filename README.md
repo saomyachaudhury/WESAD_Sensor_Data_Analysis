@@ -49,47 +49,70 @@ We believe, it is possible to segregate the emotional states of both the Victim 
 
 
 
-## Block Diagram and Features List
+## Block Diagram
 
 ![Block Diagram](images/Screenshot1.png)
 
 ## EDA (Exploratory Data Analysis)
 
-_Analyzing the amplitude of the (a) Log – Amplitude spectrogram (b) Log – Frequency spectrogram of a speech signal. The darker regions mark the regions of high energy._
-![WESAD Audio Spectrogram](images/Screenshot2.png)
+### (1) Correlation Plot
+Following were the key pointers for plotting the correlation matrix:
+* The threshold was set to 0.9. As a result, an output of range between -0.9 to 0.9 was obtained.
+* A mask was applied to retrieve only the left lowermost pyramid since the upper pyramid is a carbon copy of the lower one.
+* We have denoted the results in form of ellipse. By doing so, a lot of vital information can be obtained visually. For this purpose, we have used the ‘biokit.viz’ and ‘EllipseCollection’ from matplotlib collections.
+* An ellipse facing left indicates correlation values between (-1, 0). In other words, it indicates negative values.
+* Similarly, an ellipse facing right indicates correlation values between (0, 1). In other words, indicating positive values.
+* It is worthwhile to note that, the size of the ellipse also plays a vital role. As the width decreases, it indicates correlation values tending towards extreme left (-1) or extreme right (1) depending on where the ellipse is facing. As the width increases and the ellipse becomes more circular, we understand those values are naturally inclined to 0.
 
-_Plot of Zero – crossing rate magnified from 9000 to 9050 for an audio sample._
-![Zero Crossing Rate of an audio sample](images/Screenshot3.png)
+_Correlogram of Gender Emotion State after Removing Highly Correlated Features > 0.9_
+![Correlogram Removing Hignly Correlated Features](images/Screenshot2.png)
 
-_MFCCs values extracted using Librosa along with unique labels_
-![MFCC Values Extraction](images/Screenshot4.png)
+### (2) 1D - Histogram Plot
+A few interesting pointers were observed on the dataset using 1D-Hist Plot:
+* ‘Resp’ and ‘BVP’ showed beautiful bell curves and were either left-skewed, right-skewed or centred. This shows the uniformity of the data. The ‘BVP_peak_freq’ showed beautiful interference pattern like inference.
+* ‘Temp slope’ did not show a lot of variation and were mostly centric to just a few bins.
+* ‘ACC_x_mean’ and ‘net_acc_mean’ did not show uniformity in the data.
 
-_(a) Boxplot for emotional intensity. (b) Violin plot showing the Quartiles and mean for each type of emotion. (c) Frames vs Mean Normalized MFCC values for two audio samples of anger emotion for each gender. The graph shows clear demarcation between the emotional states in both male and female categories._
+_1D - Histogram Plot for various features based on Count_
+![1D-Hist plot](images/Screenshot3.png)
+
+### (3) Violin plots for data distribution analysis
+Violin plots show summary statistics as well as the density of each variable.
+* A few of the parameters show clearly defined peaks. Others are either left or right skewed (suggesting that most of the data points lie there).
+* Plots of ‘TEMP’ show a similar distribution and are suggestive of the fact that they could be dropped.
+* ‘BVP_peak_freq’ show almost a continuous distribution of the male and female category in each emotion factor.
+
+_Violin plots for data distribution analysis based on Hue_
+![Violin plots](images/Screenshot4.png)
+
+### (4) Relative scatter plots for various emotional states
+The relative scatter plot function gives you access to a variety of axes-level functions that display the relationship between two variables using semantic mappings of subsets. The underlying axes-level function is chosen using the "kind" parameter.
+* The plots are created for those columns having correlation between absolute value (0.5, 0.9).
+* 4 emotional states each for male and female are plotted for understanding the relationship.
+* A few of the columns like ‘net_acc_std’ and ‘net_acc_max’ and 2D plots between RESP parameters show a linear relationship when plotted for various emotional states.
+* Relationship between ‘TEMP_slope’ and ‘TEMP_std’ do not show clearly defined features that are widely spread.
+
+_Relative scatter plots with Hue_
 
 <p align="center">
 <img width="900" height="1200" src="images/Screenshot5.png">
 </p>
-    
-_1D - KDE Plots for Gender Based Classification_
-![1D - KDE Plots (1)](images/Screenshot6.png)
+
+### (5) 1D – KDE Plots for various emotional states analysis
+* Clearly defined peaks can be observed for a few columns ‘ACC_x_mean’, ‘EDA_mean’ and ‘TEMP_mean’.
+* Others have intertwined peaks and a few of them have completely overlapping distributions.
+
+_1D-KDE plots with Hue using subject_gender_
+![1D - KDE Plots](images/Screenshot6.png)
+
+### (6) Swarmplots
+Create a categorical scatterplot with non-overlapping points. This function is similar to stripplot(), but the points are adjusted so that they do not overlap (only along the categorical axis).
 
 <p align="center">
 <img width="900" height="900" src="images/Screenshot7.png">
 </p>
 
-* Differentiating peaks can be observed using 1D – KDE plots for various acoustic features like SFM, Q25 …etc.
-* For a few of the other measures like meanfreq, meandom, median …etc we can observe non – differentiating peaks suggesting that they would not be good for gender based classification task.
-
-
 ## Results and Performance Evaluation
-
-### For classification of Male and Female voice
-_Result of binary classification of Male and Female classification using (a) Decision Tree Classifier (b) XGBoost (Extreme Gradient Boost). The 0 indicates female class and 1 indicates the male class._
-![Male Female Decision Tree and XGBoost Classifier](images/Screenshot8.png)
-
-_(a) Result for classification of emotions using Support Vector Classifier (b) Emotion Classification result using XGBoost._
-![Emotion classification SVM and XGBoost Classifier](images/Screenshot9.png)
-
 
 For a better understanding on the extracted features, a result comparison of 3 extracted dataframes was done. These dataframes are:
 *	gender_emotion_state having a total of 34 extracted features. This is the original extracted dataframe.
@@ -105,7 +128,17 @@ Following results were observed:
 *	Cross validation results are very satisfactory as performing random splits of 10 yielded desirable difference in the accuracy.
 *	In the overall category, XGBoost achieves the best results. Binary class average is 98%, 4 class (emotional state) average gives 95% and 8 class gender_emotion classification average yields 94% accuracy results.
 
+_Comparative Result Analysis_
+![Comparative Result Analysis](images/Screenshot8.png)
 
-_Confusion Matrix_
-![Confusion Matrix M/F](images/Screenshot10.png)
-![Confusion Matrix Emotion](images/Screenshot11.png)
+### For classification of Male and Female classes
+_(a) Result for binary classification using Logistic Regression with Confusion Matrix (b) Result for binary classification using SVM with Confusion Matrix_
+![Binary classification LR and SVM](images/Screenshot9.png)
+
+### For 4 class classification based on Emotional states
+_Quad class classification report using Decision Tree Classifier with Confusion Matrix_
+![Quad class classification using Decision Tree](images/Screenshot10.png)
+
+### For 8 class classification based on Gender Emotional states
+_Octa classification report using XGBoost with Confusion Matrix_
+![Octa classification using Decision Tree](images/Screenshot11.png)
