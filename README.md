@@ -129,10 +129,14 @@ Following results were observed:
 *	In the overall category, XGBoost achieves the best results. Binary class average is 98%, 4 class (emotional state) average gives 95% and 8 class gender_emotion classification average yields 94% accuracy results.
 
 _Comparative Result Analysis_
+
+
 ![Comparative Result Analysis](images/Screenshot8.png)
 
 ### For classification of Male and Female classes
 _(a) Result for binary classification using Logistic Regression with Confusion Matrix (b) Result for binary classification using SVM with Confusion Matrix_
+
+
 ![Binary classification LR and SVM](images/Screenshot9.png)
 
 ### For 4 class classification based on Emotional states
